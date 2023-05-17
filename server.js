@@ -1,6 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const http = require("http");
+
 const path = require("path");
 const { Server } = require("socket.io");
 const ACTIONS = require("./Actions");
@@ -68,6 +70,6 @@ io.on("connection", (socket) => {
   });
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 
 server.listen(port, () => console.log("listening on port " + port));
